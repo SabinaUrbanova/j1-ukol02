@@ -9,8 +9,6 @@ public class HlavniProgram {
 
     public static void main(String[] args) {
         new HlavniProgram().start();
-
-
     }
 
     public void start() {
@@ -25,21 +23,21 @@ public class HlavniProgram {
         nakresliMasinku(Color.black);
     }
 
-    public void nakresliTrojuhelnik(int delkaStrany) {
+    public void nakresliTrojuhelnik(double delkaStrany) {
         for (int i = 0; i < 3; i++) {
             zofka.move(delkaStrany);
             zofka.turnRight(120);
         }
     }
 
-    public void nakresliCtverec(int delkaStrany) {
+    public void nakresliCtverec(double delkaStrany) {
         for (int i = 0; i < 4; i++) {
             zofka.move(delkaStrany);
             zofka.turnRight(90);
         }
     }
 
-    public void nakresliObdelnik(int delkaPrvniStrany, int delkaDruheStrany) {
+    public void nakresliObdelnik(double delkaPrvniStrany, double delkaDruheStrany) {
         for (int i = 0; i < 2; i++) {
             zofka.move(delkaPrvniStrany);
             zofka.turnRight(90);
@@ -49,9 +47,8 @@ public class HlavniProgram {
     }
 
     public void nakresliKruh(double polomer) {
-        double PI = 3.14;
         for (int i = 0; i < 20; i++) {
-            zofka.move(((double)(2*polomer*PI))/20);
+            zofka.move(((double)(2*polomer*Math.PI))/20);
             zofka.turnRight(360 / 20);
         }
     }
@@ -66,7 +63,6 @@ public class HlavniProgram {
 
     public void nakresliSnehulaka(Color barva) {
         double polomer = 50.0;
-        double PI = 3.14;
         zofka.setPenColor(barva);
         for (int i = 0; i < 3; i++) {
             zofka.turnLeft(90);
@@ -80,7 +76,7 @@ public class HlavniProgram {
             }
         }
         for (int i = 0; i < 5; i++) {
-            zofka.move(((double)(2*polomer*1.3*PI))/20);
+            zofka.move(((double)(2*polomer*1.3*Math.PI))/20);
             zofka.turnLeft(360 / 20);
         }
         zofka.penDown();
